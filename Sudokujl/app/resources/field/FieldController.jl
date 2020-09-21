@@ -3,6 +3,7 @@ module FieldController
   using Sudoku 
   
   function drawField()
-    html(:field, :drawField, field = Sudoku.solve())
+    failed, field = Sudoku.solve()
+    html(:field, :drawField, field = field, failed = failed)
   end
 end
