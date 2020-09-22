@@ -1,12 +1,30 @@
-<h1>Solve this - length: $(length(field))</h1>
+<h1>Solve this!</h1>
 <h2>$(failed ? "Failed to solve" : "Way to easy")</h2>
-<table>
-    <% for i=1:size(A, 1) %>
-    <tr>
-        <% for j=1:size(A, 2) %>
-            <td>$(field[i,j])</td>
+<div>
+    <% @foreach(1:size(field, 1)) do i %>
+        <% @foreach(1:size(field, 2)) do j %>
+            <p>$(field[i,j]) - i=$(i) - j=$(j)</p>
         <% end %>
+    <% end %>
+</div>
+<!-- <table border = "1">
+    <% @foreach(1:size(field, 1)) do i %>
+        <tr>
+            <% @foreach(1:size(field, 2)) do j %>
+                <td>$(field[i,j])</td>
+            <% end %>
+        </tr>
+    <% end %>
+</table> -->
+
+<!-- <table border = "1">
+    <tr>
+       <td>Row 1, Column 1</td>
+       <td>Row 1, Column 2</td>
     </tr>
-     end
-    %>
-</table>
+    
+    <tr>
+       <td>Row 2, Column 1</td>
+       <td>Row 2, Column 2</td>
+    </tr>
+ </table> -->

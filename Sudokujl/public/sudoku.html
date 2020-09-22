@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Julia meets Sudoku</title>
+  <title>Genie :: The highly productive Julia web framework</title>
 
   <!-- Bootstrap -->
   <link href="/css/genie/bootstrap.min.css" rel="stylesheet">
@@ -14,10 +14,19 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".side-menu">
-  <%
-    @yield
-  %>
-
+  <div class="container-fluid">
+    <!-- Start: Header -->
+    <div class="row hero-header" id="home">
+      <div class="col-md-7">
+        <h1 id="main-heading">Welcome!</h1>
+        
+      </div>
+      <div class="col-md-5 hidden-xs">
+        <img src="/img/genie/genie.png" class="rocket animated bounce" alt="Genie">
+      </div>
+    </div>
+    <!-- End: Header -->
+  </div>
 
   <!-- Start: Footer -->
   <div class="container-fluid footer">

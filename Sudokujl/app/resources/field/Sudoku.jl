@@ -43,7 +43,8 @@ function solve()
         #println("Solved the sudoku, way too easy...\n")
     end
     #draw(Feld)
-    return failed, global Feld
+    draw(Feld)
+    return failed, Feld
 end
 
 

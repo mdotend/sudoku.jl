@@ -1,6 +1,7 @@
 module FieldController
   using Genie.Renderer.Html
-  using Sudoku 
+  include("Sudoku.jl")
+  using .Sudoku
   
   function drawField()
     failed, field = Sudoku.solve()
