@@ -1,12 +1,21 @@
 <h1>Solve this!</h1>
 <h2>$(failed ? "Failed to solve" : "Way to easy")</h2>
-<div>
-    <% @foreach(1:size(field, 1)) do i %>
-        <% @foreach(1:size(field, 2)) do j %>
-            <p>$(field[i,j]) - i=$(i) - j=$(j)</p>
+<table border = "1">
+    <tbody>
+        <% @foreach(1:size(table, 1)) do i %>
+            <tr>
+                <% @foreach(1:size(table, 2)) do j %>
+                    <td> 
+                        <form>
+                            <input type="text" value=$(table[i,j]) maxlength="1" size="1">
+                        </form>
+                    </td>
+                    <!-- partial("app/resources/field/views/partials/field", value = table[i,j], context = @__MODULE__) -->
+                <% end %>
+            </tr>
         <% end %>
-    <% end %>
-</div>
+    </tbody>
+</table>
 <!-- <table border = "1">
     <% @foreach(1:size(field, 1)) do i %>
         <tr>
