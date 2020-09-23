@@ -1,7 +1,10 @@
 <h1>Solve this!</h1>
 <div>
-    <button type="button" >clear</button>
+    <a href="clear"> <button type="button" onclick="">clear</button> </a>
+    <a href="solve"><button type="button" >solve</button> </a>
+    <a href="next"><button type="button" >next step</button> </a>
 </div>
+<br>
 <table border = true>
     <tbody>
         <% @foreach(1:size(table, 1)) do i
@@ -19,5 +22,5 @@
         <% end %>
     </tbody>
 </table>
-<h2>$(failed ? "Failed to solve" : "Way to easy")</h2>
+<!-- <h2>$(failed ? "Failed to solve" : "Way to easy")</h2> -->
 
