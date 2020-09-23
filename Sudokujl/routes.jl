@@ -7,3 +7,5 @@ end
 
 route("/",  FieldController.drawField)
 route("/clear", FieldController.clearField)
+route("/solve", FieldController.solve)
+route("/next", FieldController.next)
