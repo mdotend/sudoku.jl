@@ -1,13 +1,19 @@
 <h1>Solve this!</h1>
-<h2>$(failed ? "Failed to solve" : "Way to easy")</h2>
-<table border = "1">
+<div>
+    <button type="button" >clear</button>
+</div>
+<table border = true>
     <tbody>
-        <% @foreach(1:size(table, 1)) do i %>
+        <% @foreach(1:size(table, 1)) do i
+            i%3 == 0 && i != 9 ? bBottom = "4" : bBottom = "1" %>
             <tr>
-                <% @foreach(1:size(table, 2)) do j %>
-                    <td> 
+                <% @foreach(1:size(table, 2)) do j 
+                    table[i,j] == 0 ? value = "" : value = table[i,j] 
+                    j%3 == 0 && j != 9 ? bRight = "4" : bRight = "1" 
+                    value != "" ? readonly = "readonly" : readonly = "" %>
+                    <td style='border-right-width:$(bRight)px; border-bottom-width:$(bBottom)px;' > 
                         <form>
-                            <input type="text" value=$(table[i,j]) maxlength="1" size="1">
+                            <input type="text" value=$(value) maxlength="1" $(readonly) size=1 style="box-sizing: border-box;" >
                         </form>
                     </td>
                     <!-- partial("app/resources/field/views/partials/field", value = table[i,j], context = @__MODULE__) -->
@@ -16,24 +22,5 @@
         <% end %>
     </tbody>
 </table>
-<!-- <table border = "1">
-    <% @foreach(1:size(field, 1)) do i %>
-        <tr>
-            <% @foreach(1:size(field, 2)) do j %>
-                <td>$(field[i,j])</td>
-            <% end %>
-        </tr>
-    <% end %>
-</table> -->
+<h2>$(failed ? "Failed to solve" : "Way to easy")</h2>
 
-<!-- <table border = "1">
-    <tr>
-       <td>Row 1, Column 1</td>
-       <td>Row 1, Column 2</td>
-    </tr>
-    
-    <tr>
-       <td>Row 2, Column 1</td>
-       <td>Row 2, Column 2</td>
-    </tr>
- </table> -->
