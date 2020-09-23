@@ -11,12 +11,9 @@
                     table[i,j] == 0 ? value = "" : value = table[i,j] 
                     j%3 == 0 && j != 9 ? bRight = "4" : bRight = "1" 
                     value != "" ? readonly = "readonly" : readonly = "" %>
-                    <td style='border-right-width:$(bRight)px; border-bottom-width:$(bBottom)px;' > 
-                        <form>
-                            <input type="text" value=$(value) maxlength="1" $(readonly) size=1 style="box-sizing: border-box;" >
-                        </form>
+                    <td style='border-right-width:$(bRight)px; border-bottom-width:$(bBottom)px;'>
+                        <% partial("app/resources/field/views/partials/field", value = value, readonly = readonly, context = @__MODULE__) %>
                     </td>
-                    <!-- partial("app/resources/field/views/partials/field", value = table[i,j], context = @__MODULE__) -->
                 <% end %>
             </tr>
         <% end %>
