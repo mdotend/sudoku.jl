@@ -1,8 +1,9 @@
 using Genie.Router
 using FieldController
 
-route("/") do
+route("/hello") do
   serve_static_file("welcome.html")
 end
 
-route("/solve",  FieldController.drawField)
+route("/",  FieldController.drawField)
+route("/clear", FieldController.clearField)
